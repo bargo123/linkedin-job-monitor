@@ -49,9 +49,9 @@ def fetch_jobs():
 def main():
     seen = load_seen()
     new_seen = set(seen)
-
+    send_telegram("Loading...")
     jobs = fetch_jobs()
-
+     
     for job_id, title, link in jobs:
         if job_id not in seen:
             send_telegram(f"🚀 New Flutter Job\n\n{title}\n{link}")
